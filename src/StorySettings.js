@@ -8,8 +8,8 @@ const StorySettings = props => {
         <div>
           <h3>Add a new Wizard</h3>
         </div>
-        <input type="text" name="newWizard" />
-        <select name="newWizardHouse">
+        <input type="text" name="newWizard" onChange={props.handleNameChange}/>
+        <select name="newWizardHouse" onChange={props.handleHouseChange}>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Slytherin">Slytherin</option>
           <option value="Hufflepuff">Hufflepuff</option>
@@ -17,11 +17,11 @@ const StorySettings = props => {
         </select>
         <input type="submit" />
       </form>
-      <form>
+      <form onChange={props.handleFilterChange}>
         <div>
           <h3>Filter By House</h3>
         </div>
-        <input name="selectedHouse" type="radio" value="All" />All
+        <input name="selectedHouse" type="radio" defaultChecked='true' value="All" />All
         <input name="selectedHouse" type="radio" value="Gryffindor" />Gryffindor
         <input name="selectedHouse" type="radio" value="Slytherin" />Slytherin
         <input name="selectedHouse" type="radio" value="Hufflepuff" />Hufflepuff
